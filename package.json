@@ -1,5 +1,5 @@
 {
-  "name": "encrypt",
+  "name": "JSCryptor-cli",
   "version": "1.0.0",
   "description": "A command-line tool for encrypting comics",
   "main": "index.js",
@@ -17,5 +17,12 @@
   ],
   "author": "Enrico Deleo",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/verticomics/encrypt#readme"
+  "homepage": "https://bitbucket.org/verticomics/encrypt#readme",
+  "bin": {
+    "jscryptor": "./index.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "jscryptor": "0.0.11"
+  }
 }
