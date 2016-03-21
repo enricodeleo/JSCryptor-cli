@@ -1,0 +1,21 @@
+{
+  "name": "encrypt",
+  "version": "1.0.0",
+  "description": "A command-line tool for encrypting comics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/verticomics/encrypt.git"
+  },
+  "keywords": [
+    "encyrpt",
+    "aes",
+    "RNCryptor"
+  ],
+  "author": "Enrico Deleo",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/verticomics/encrypt#readme"
+}
