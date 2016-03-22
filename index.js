@@ -20,6 +20,6 @@ var program = require('commander');
 
 program
 .version('1.0.0')
-.command('encrypt <source> <destination>', 'encrypt a file')
-.command('decrypt <source> <destination>', 'decrypt a file', {isDefault: true})
+.command('encrypt <source> [destination]', 'encrypt a file')
+.command('decrypt <source> [destination]', 'decrypt a file', {isDefault: true})
 .parse(process.argv);
