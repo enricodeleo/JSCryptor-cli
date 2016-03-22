@@ -7,6 +7,7 @@ var fs = require('fs');
 var RNCryptor = require('jscryptor');
 var program = require('commander');
 var fileExists = require('file-exists');
+var path = require('path');
 var source, destination;
 
 // parsing the command
@@ -31,9 +32,9 @@ if ( !fileExists(source) ) {
 }
 
 if ( !destination ) {
-  console.log('\nDestination is not set.\n');
-  process.exit(1);
+  destination = path.parse(source).dir + '/' + path.parse(source).name + '.enc';
 }
+
 var b64 = new Buffer( fs.readFileSync(source).toString(), 'base64' );
 var dec = RNCryptor.Decrypt( b64, program.password );
 

@@ -7,6 +7,7 @@ var fs = require('fs');
 var RNCryptor = require('jscryptor');
 var program = require('commander');
 var fileExists = require('file-exists');
+var path = require('path');
 var source, destination;
 
 // parsing the command
@@ -31,8 +32,7 @@ if ( !fileExists(source) ) {
 }
 
 if ( !destination ) {
-  console.log('Destination is not set.\n');
-  process.exit(1);
+  destination = path.parse(source).dir + '/' + path.parse(source).name + '.enc';
 }
 
 var file = fs.readFileSync( source );
@@ -40,4 +40,4 @@ var enc = RNCryptor.Encrypt( file, program.password );
 
 // write encrypted output to a file
 fs.writeFileSync( destination, enc );
-// var fileName = files[i].name.replace( '.jpg', '' ).replace( '.jpeg', '' );
+var fileName = files[i].name.replace( '.jpg', '' ).replace( '.jpeg', '' );
