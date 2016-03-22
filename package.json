@@ -1,5 +1,5 @@
 {
-  "name": "JSCryptor-cli",
+  "name": "jscryptor-cli",
   "version": "1.0.0",
   "description": "A command-line tool for encrypting comics",
   "main": "index.js",
