@@ -40,4 +40,3 @@ var enc = RNCryptor.Encrypt( file, program.password );
 
 // write encrypted output to a file
 fs.writeFileSync( destination, enc );
-var fileName = files[i].name.replace( '.jpg', '' ).replace( '.jpeg', '' );

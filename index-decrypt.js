@@ -32,7 +32,7 @@ if ( !fileExists(source) ) {
 }
 
 if ( !destination ) {
-  destination = path.parse(source).dir + '/' + path.parse(source).name + '.enc';
+  destination = path.parse(source).dir + '/' + path.parse(source).name + '.dec';
 }
 
 var b64 = new Buffer( fs.readFileSync(source).toString(), 'base64' );
