@@ -10,18 +10,22 @@ var randomString = require('random-string');
 
 // parsing the command
 program
-.option('-p, --password', 'password to be used during encryption')
+.arguments('<source> <destination>')
+.option('-p, --password [password]', 'password to be used during encryption (mandatory)')
 .parse(process.argv);
 
-if (!program.args.length) {
-  console.error('\nsome argument is missing.');
-  program.outputHelp();
+if ( !program.args.length || !program.password ) {
+  console.error('\nMissing mandatory arguments.');
+  program.help();
   process.exit(1);
 }
 
-console.log();
-if (program.force) console.log('  force: install');
-pkgs.forEach(function(pkg){
-  console.log('  install : %s', pkg);
-});
-console.log();
+program.action(function( source, destination ) {
+  var file = fs.readFileSync( source );
+  var enc = RNCryptor.Encrypt( file, program.password );
+
+  // write encrypted output to a file
+  fs.writeFileSync( destination, enc );
+  // var fileName = files[i].name.replace( '.jpg', '' ).replace( '.jpeg', '' );
+})
+.parse(process.argv);
