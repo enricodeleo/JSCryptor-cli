@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "jscryptor": "0.0.11",
-    "random-string": "^0.1.2"
+    "file-exists": "^1.0.0",
+    "jscryptor": "0.0.11"
   }
 }

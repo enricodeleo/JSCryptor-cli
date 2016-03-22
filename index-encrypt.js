@@ -6,7 +6,7 @@
 var fs = require('fs');
 var RNCryptor = require('jscryptor');
 var program = require('commander');
-var randomString = require('random-string');
+var fileExists = require('file-exists');
 var source, destination;
 
 // parsing the command
@@ -20,13 +20,18 @@ program
 .parse(process.argv);
 
 if ( !program.args.length || !program.password || !source ) {
-  console.error('\nMissing mandatory arguments.');
+  console.error('\nMissing mandatory arguments.\n');
   program.help();
   process.exit(1);
 }
 
+if ( !fileExists(source) ) {
+  console.log('\nCannot find the source file.\n');
+  process.exit(1);
+}
+
 if ( !destination ) {
-  console.log('destination is not set');
+  console.log('Destination is not set.\n');
   process.exit(1);
 }
 
