@@ -1,11 +1,8 @@
 {
   "name": "jscryptor-cli",
   "version": "1.0.0",
-  "description": "A command-line tool for encrypting comics",
+  "description": "A command-line tool for encrypting files",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/verticomics/encrypt.git"
