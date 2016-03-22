@@ -8,14 +8,14 @@ var RNCryptor = require('jscryptor');
 var program = require('commander');
 var randomString = require('random-string');
 
+// parsing the command
 program
-.option('-f, --force', 'force installation')
+.option('-p, --password', 'password to be used during encryption')
 .parse(process.argv);
 
-var pkgs = program.args;
-
-if (!pkgs.length) {
-  console.error('packages required');
+if (!program.args.length) {
+  console.error('\nsome argument is missing.');
+  program.outputHelp();
   process.exit(1);
 }
 
