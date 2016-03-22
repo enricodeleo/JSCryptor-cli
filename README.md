@@ -4,7 +4,7 @@ A cli (command line) version of [JSCryptor](https://github.com/chesstrian/JSCryp
 
 ## Install
 
-`npm install jscryptor -g`
+`npm install jscryptor-cli -g`
 
 ## Usage
 
