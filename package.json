@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/verticomics/encrypt.git"
+    "url": "git+ssh://git@github.com/enricodeleo/JSCryptor-cli.git"
   },
   "keywords": [
     "encyrpt",
@@ -14,7 +14,7 @@
   ],
   "author": "Enrico Deleo",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/verticomics/encrypt#readme",
+  "homepage": "https://github.com/enricodeleo/JSCryptor-cli#readme",
   "bin": {
     "jscryptor": "./index.js",
     "jscryptor-decrypt": "./index-decrypt.js",
