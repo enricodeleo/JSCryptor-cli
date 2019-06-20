@@ -25,6 +25,7 @@ Run this tool from your shell following this pattern:
 | --------|-------------|
 | -h, --help | output usage information |
 | -p, --password | password to be used during encryption (mandatory) |
+| -b, --byte | byte mode for compatibility with native language RNCryptor implementation, decrypt only (optional) |
 
 ### Arguments
 

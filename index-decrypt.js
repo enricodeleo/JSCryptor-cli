@@ -14,6 +14,7 @@ var source, destination;
 program
 .arguments('<source> [destination]')
 .option('-p, --password [password]', 'password to be used during encryption (mandatory)')
+.option('-b, --byte', 'byte mode for compatibility with native language RNCryptor implementation (optional)')
 .action(function( src, dest ) {
   source = src;
   destination = dest;
@@ -35,8 +36,15 @@ if ( !destination ) {
   destination = path.parse(source).dir + '/' + path.parse(source).name + '.dec';
 }
 
-var b64 = new Buffer( fs.readFileSync(source).toString(), 'base64' );
-var dec = RNCryptor.Decrypt( b64, program.password );
+var encrypted;
+
+if( program.byte ) {
+	encrypted = new Buffer( fs.readFileSync(source) );
+} else {
+	encrypted = new Buffer( fs.readFileSync(source).toString(), 'base64' );
+}
+
+var dec = RNCryptor.Decrypt( encrypted, program.password );
 
 // Write encrypted file
 fs.writeFileSync( destination, dec );
